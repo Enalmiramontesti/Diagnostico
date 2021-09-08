@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="estilo.css">
+    <script>
+         
+        function factorial(n){
+            Tabla = document.createElement("table");
+            Tabla.setAttribute("id","Tabla");
+            Tabla.align = "center";
+            cadena = " 1 " ;
+            valor = 1;
+            
+             for(i = 1; i <= n; i++){
+                tr = document.createElement("tr");
+                //columna 1
+                td =  document.createElement("td");
+                td.setAttribute("id","c1");
+                celda = document.createTextNode(i);
+                td.appendChild(celda);
+                tr.appendChild(td);
+                //columna 2
+                td =  document.createElement("td");
+                cadena = cadena + " * " + i
+                celda = document.createTextNode("  " + cadena + "  ");
+                td.appendChild(celda);
+                tr.appendChild(td);
+                Tabla.appendChild(tr)
+                //columna 3
+                td =  document.createElement("td");
+                td.setAttribute("id","c2");
+                valor = valor * i;
+                celda = document.createTextNode(valor);
+                td.appendChild(celda);
+                tr.appendChild(td);
+
+            }//fin for i
+            document.body.appendChild(Tabla);
+            Tabla.setAttribute("border",2);
+            
+            }//fin factorial
+    </script>
+    <title>Pantalla Principal</title>
+</head>
+<body>
+        <h2>Bienvenido admin</h2>
+        <br>
+        <input type="number"  min = "1" id="n" value="1">
+        <button type="button" onclick="factorial(n.value)">Generar factorial</button>
+</body>
+</html>
